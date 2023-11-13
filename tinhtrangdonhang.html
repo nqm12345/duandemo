@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            font-size: 17px;
+        }
+
+        header {
+            height: 100px;
+            display: flex;
+            background-color: #fff !important;
+            align-items: center;
+            position: relative;
+        }
+
+        a {
+            text-decoration: none;
+            color: black;
+        }
+
+        .logo {
+            width: 200px;
+            font-size: 50px;
+            margin-right: 10px;
+        }
+
+        .search {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border: 1px solid rgb(158, 155, 155);
+            height: 50px;
+            width: 400px;
+            border-radius: 8px;
+            margin: 50px;
+        }
+
+        .search button {
+            background: none;
+            border: none;
+        }
+
+        .search input {
+            margin-left: 4px;
+            border: none;
+            height: 100%;
+            width: 100%;
+        }
+
+        .search i {
+            font-size: 20px;
+            margin: 10px;
+        }
+
+        .search input:focus {
+            outline: none;
+        }
+
+        .nav-header ul {
+            display: flex;
+            font-size: 17px;
+        }
+
+        .nav-header li {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+            width: 120px;
+        }
+
+        .nav-header i {
+            margin: 5px;
+            font-size: 25px;
+
+        }
+
+        .form-login i {
+            font-size: 25px;
+            color: #fff;
+            margin: 10px;
+        }
+
+        .form-login {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            justify-content: center;
+            right: 20px;
+            width: 150px;
+            background-color: #821818;
+            height: 70%;
+            border-radius: 10px;
+        }
+
+        .form-login a {
+            color: #fff;
+            width: 50px;
+        }
+
+        /* nav main */
+        .nav-main {
+            height: 50px;
+            color: #fff;
+            background: #353333;
+        }
+
+        .nav-main i {
+            margin: 4px;
+        }
+
+        .nav-main ul {
+            margin-left: 20px;
+            display: flex;
+            list-style: none;
+
+        }
+
+        .nav-main li {
+            display: flex;
+            align-items: center;
+            margin-right: 40px;
+        }
+
+        .nav-main a {
+            line-height: 50px;
+            color: #fff;
+
+        }
+
+        .father-li-sp {
+            position: relative;
+        }
+
+        .ch-li-sp {
+            display: none !important;
+            left: 0;
+            top: 50px;
+            position: absolute;
+            background-color: #ffff;
+            flex-direction: column;
+            width: 300px;
+            padding: 10px;
+        }
+
+        .ch-li-sp a {
+            color: black;
+        }
+
+        .father-li-sp:hover .ch-li-sp {
+            display: flex !important;
+        }
+
+        .ch-li-sp li:hover {
+            background-color: #b5b3b3;
+            width: 100%;
+
+        }
+
+        .navbar {
+            background-color: white;
+            max-width: 100%;
+            height: 30px;
+        }
+
+        .navbar a {
+            padding: 10px;
+            line-height: 30px;
+            font-size: 15px;
+            color: black;
+        }
+
+        .boxtinhtrangdhs {
+            border: 1px solid #ccc;
+            width: 1300px;
+            height: 600px;
+            margin-left: 120px;
+            margin-top: 50px;
+            background-color: white;
+        }
+
+        .boxtinhtrangdh {
+            border: 1px solid #ccc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 30px;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .boxmadh {
+            border: 1px solid black;
+            width: 230px;
+            height: 100px;
+            border: none;
+        }
+
+        .boxtrangthai {
+            border: 1px solid black;
+            width: 1028px;
+            height: 100px;
+            border: none;
+        }
+
+        .trangthai5 {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-left: 30px;
+        }
+
+        .trai {
+            display: flex;
+        }
+
+        .mvd {
+            display: flex;
+            margin-bottom: 10px;
+            margin-top: 25px;
+        }
+
+        .left {
+            margin-left: 10px;
+        }
+
+        .xanhduong {
+            margin-left: 10px;
+            color: blue;
+        }
+
+        .trangthai {
+            border: 1px solid black;
+            width: 40px;
+            height: 40px;
+            border-radius: 30px;
+            margin-top: 25px;
+        }
+
+        .trangthai1 {
+            border: 2px solid #ccc;
+            width: 60px;
+            height: 1px;
+            margin-top: 42px;
+            margin-right: 60px;
+        }
+
+        .trai {
+            border: 1px solid black;
+            margin-left: 35px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            border: none;
+        }
+
+        .chu {
+            border: 1px solid black;
+            width: 100%;
+            display: flex;
+            margin-top: 10px;
+            border: none;
+        }
+
+        .font1 {
+            font-size: 16px;
+            margin-left: 5px;
+
+        }
+
+
+        .font {
+            font-size: 16px;
+            padding: 0px 10px;
+            margin-left: 102px;
+        }
+
+        .boxtinhtrangdhs1 {
+            border: 1px solid #ccc;
+            width: 100%;
+            margin-top: 20px;
+            border: none;
+
+        }
+
+        .boxttdh2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0px;
+        }
+
+        .boxttdh3 {
+            border: 1px solid #ccc;
+            height: 150px;
+            margin-right: 20px;
+            margin-left: 20px;
+        }
+
+        .ndttdh {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+        }
+
+        .ndtt {
+            border: 1px solid black;
+            height: 150px;
+            border: none;
+            
+        }
+
+        .ttvc {
+            margin-top: 15px;
+            margin-left: 10px;
+            font-weight: 600;
+        }
+
+        .flex {
+            margin-top: 15px;
+            margin-left: 10px;
+        }
+
+        .flex1 {
+            display: flex;
+            margin-top: 10px;
+            margin-left: 10px;
+        }
+
+
+        .tt {
+            margin-left: 50px;
+        }
+
+        .tt1 {
+            color: blue;
+            margin-left: 38px;
+        }
+
+        .bordernetdut {
+            margin-top: 50px;
+            border: 1px dashed orange;
+            height: 30px;
+            text-align: center;
+            margin-right: 10px;
+        }
+
+        .maucam {
+            line-height: 30px;
+            color: orange;
+            font-size: 16px;
+        }
+
+        .lsdh {
+            margin-top: 20px;
+            border: 1px solid #ccc;
+            width: 800px;
+            margin-left: 20px;
+        }
+
+        .lsdh1 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .lsdh12 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .lsdh2 {
+            border: 1px solid black;
+            width: 600px;
+            height: 240px;
+            border: none;
+        }
+
+        .lsdh3 {
+            border: 1px solid black;
+            width: 400px;
+            height: 240px;
+            border: none;
+        }
+
+        .lsdh13 {
+            display: flex;
+
+        }
+
+        .tglsdh {
+            margin-top: 20px;
+        }
+
+        .lsdh4 {
+            margin-top: 20px;
+            margin-left: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 10px;
+            border: 1px solid black;
+            width: 50px;
+            border: none;
+        }
+
+        .ttdhtg {
+            margin-top: 20px;
+        }
+
+        .lsdh5 {
+            border: 1px solid black;
+            width: 20px;
+            height: 20px;
+            border-radius: 10px;
+            text-align: center;
+            background-color: gray;
+            color: white;
+        }
+
+        .lsdh6 {
+
+            border-left: 2px solid gray;
+            height: 20px;
+            margin-left: 10px;
+        }
+
+        .bn {
+            display: flex;
+            margin-left: 20px;
+        }
+    </style>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <header>
+        <div class="logo">logo</div>
+        <form action="" method="" class="search">
+            <input type="text" placeholder="Bạn cần tìm gì?">
+            <button><i class='bx bx-search'></i></button>
+        </form>
+        <nav class="nav-header">
+            <ul>
+                <li class="nav-hotline">
+                    <i class='bx bx-phone-call'></i>
+                    <a href="">Hotline: 0354179060</a>
+                </li>
+                <li class="info-cart">
+                    <i class='bx bx-notepad'></i>
+                    <a href="">Tra cứu đơn hàng</a>
+                </li>
+                <li class="cart">
+                    <i class='bx bx-cart-alt'></i>
+                    <a href="">Giỏ hàng</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="form-login">
+            <i class='bx bxs-user'></i>
+            <a href="">Đăng nhập</a>
+            <a href="">Đăng ký</a>
+        </div>
+    </header>
+    <nav class="nav-main">
+        <ul>
+            <li><i class='bx bxs-user'></i><a href="">Trang chủ</a></li>
+            <li class="father-li-sp">
+                <i class='bx bxs-box'></i>
+                <a href="">Sản phẩm</a>
+                <i class='bx bxs-down-arrow'></i>
+                <ul class="ch-li-sp">
+                    <li><a href="">Laptop</a></li>
+                    <li><a href="">PC</a></li>
+                    <li><a href="">Bàn phím</a></li>
+                    <li><a href="">Chuột</a></li>
+                </ul>
+            </li>
+            <li><i class='bx bx-news'></i><a href="">Tin tức công nghệ</a></li>
+            <li><i class='bx bxs-user-rectangle'></i><a href="">Giới thiệu</a></li>
+            <li><i class='bx bxs-phone-call'></i><a href="">Liên hệ</a></li>
+            <li><i class='bx bxs-videos'></i><a href="">Video</a></li>
+        </ul>
+    </nav>
+
+
+    <section class="navbar">
+        <a href="">Trang chủ /</a> <a>Chi tiết đơn hàng</a>
+    </section>
+    <div class="boxtinhtrangdhs">
+        <div class="boxtinhtrangdh">
+            <div class="boxmadh">
+                <div class="left">
+                    <div class="mvd">
+                        <p>Tên đơn hàng:</p>
+                        <p class="xanhduong">Laptop Gaming</p>
+                    </div>
+
+
+                    <p>Đặt hàng: 8/11/20023</p>
+                </div>
+            </div>
+            <div class="boxtrangthai">
+                <div class="trangthai5">
+                    <div class="trai">
+
+                        <div class="trangthai">
+
+                        </div>
+
+
+                        <div class="trangthai1">
+
+                        </div>
+
+                        <div class="trangthai">
+
+                        </div>
+
+
+                        <div class="trangthai1">
+
+                        </div>
+
+
+                        <div class="trangthai">
+
+                        </div>
+
+
+                        <div class="trangthai1">
+
+                        </div>
+
+
+                        <div class="trangthai">
+
+                        </div>
+
+
+                        <div class="trangthai1">
+
+                        </div>
+
+
+                        <div class="trangthai">
+
+                        </div>
+
+
+                    </div>
+                    <div class="chu">
+                        <div class="font1">
+                            <p>Chờ xác nhận</p>
+                        </div>
+
+                        <div class="font">
+                            <p>Chờ xác nhận</p>
+                        </div>
+
+                        <div class="font">
+                            <p>Chờ xác nhận</p>
+                        </div>
+
+                        <div class="font">
+                            <p>Chờ xác nhận</p>
+                        </div>
+
+                        <div class="font">
+                            <p>Chờ xác nhận</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="boxtinhtrangdhs1">
+            <div class="boxttdh2">
+                <div class="boxttdh3">
+                    <div class="ndttdh">
+                        <div class="ndtt">
+                            <p class="ttvc">TÌNH TRẠNG VẬN CHUYỂN</p>
+
+                            <div class="flex">
+                                <p>Nhà vận chuyện: VNpost</p>
+                            </div>
+
+                            <div class="flex1">
+                                <p>Tình trạng: </p>
+                                <p class="tt"> Đang vận chuyển</p>
+                            </div>
+
+                        </div>
+
+                        <div class="ndtt">
+                            <div class="bordernetdut">
+                                <p class="maucam">Dự kiến giao hàng từ 8/11 - 10/11</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="boxttdh3">
+                    <div class="ndtt">
+                        <p class="ttvc">THÔNG TIN NGƯỜI NHẬN HÀNG</p>
+
+                        <div class="flex">
+                            <p>Nguyễn Quang Minh - 0325508***</p>
+                        </div>
+
+                        <div class="flex1">
+                            <p>Địa chỉ nhận hàng: Số 1 Trịnh Văn Bô, Quận Nam Từ Liêm, Thành Phố Hà Nội </p>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="lsdh">
+            <div class="lsdh1">
+                <div class="lsdh12">
+                    <div class="lsdh2">
+
+                        <div class="lsdh13">
+                            <div class="lsdh4">
+
+                                <div class="lsdh5">
+                                    <p>4</p>
+                                </div>
+                                <div class="lsdh6">
+
+                                </div>
+
+                                <div class="lsdh5">
+                                    <p>3</p>
+                                </div>
+
+                                <div class="lsdh6">
+
+                                </div>
+
+                                <div class="lsdh5">
+                                    <p>2</p>
+                                </div>
+
+                                <div class="lsdh6">
+
+                                </div>
+
+                                <div class="lsdh5">
+                                    <p>1</p>
+                                </div>
+
+                            </div>
+
+                            <div class="ttdhtg">
+                                <p>Đơn hàng đang trên đường giao đến bạn</p>
+                                <br>
+                                <br>
+                                <p>Đơn hàng đã đến kho Nam Từ Liêm</p>
+                                <br>
+                                <br>
+                                <p>Đơn hàng đã được giao cho đơn vị vận chuyển</p>
+                                <br>
+                                <br>
+                                <p>Đơn hàng đã được chuẩn bị</p>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="lsdh3">
+                        <div class="tglsdh">
+                        <p>07:23 9/11/2023</p>
+                        <br>
+                        <br>
+                        <p>07:23 9/11/2023</p>
+                        <br>
+                        <br>
+                        <p>07:23 9/11/2023</p>
+                        <br>
+                        <br>
+                        <p>07:23 9/11/2023</p>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
